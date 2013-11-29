@@ -41,7 +41,14 @@
             </li>
             <li class="divider"></li>
           </ul>        
-          <ul class="right">
+          <ul class="right">            
+            <li class="divider"></li>            
+            <li>
+              <%= form_tag tickets_path, :method => 'get' do %>                
+                  <%= text_field_tag :search, params[:search] %>
+                  <%= submit_tag "Search", :name => nil %>                
+              <% end %>
+            </li>
             <li class="divider"></li>
             <li class="has-dropdown">
               <a href="#"><%= current_user.email %></a>
